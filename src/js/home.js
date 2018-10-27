@@ -34,6 +34,18 @@ getUser.then(function(){
 Promise.all([getUser, getUser2]); // ejecuta varias promesas 
 
 
-function cons(a, b){
-  
+function showModal(){
+  const $overlay = document.getElementById("overlay"); // la parte que obscurece el fondo
+  const $modal = document.getElementById("modal") // div que contiene el modal
+
+  $overlay.classList.add("active");
+  $modal.style.animation = "modalIn .8s forwards";
+}
+
+function hideModal(){
+  const $overlay = document.getElementById("overlay"); // la parte que obscurece el fondo
+  const $modal = document.getElementById("modal") // div que contiene el modal
+
+  $overlay.classList.remove("active");
+  $modal.style.animation = "modalOut .8s forwards";
 }
